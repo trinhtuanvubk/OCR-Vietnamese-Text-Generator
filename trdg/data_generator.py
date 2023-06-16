@@ -39,6 +39,7 @@ class FakeTextDataGenerator(object):
         distorsion_orientation: int,
         is_handwritten: bool,
         name_format: int,
+        current_idx: int,
         width: int,
         alignment: int,
         text_color: str,
@@ -256,7 +257,7 @@ class FakeTextDataGenerator(object):
         elif name_format == 1:
             name = "{}_{}".format(str(index), text)
         elif name_format == 2:
-            name = str(index)
+            name = str(current_idx+index)
         else:
             print("{} is not a valid name format. Using default.".format(name_format))
             name = "{}_{}".format(text, str(index))

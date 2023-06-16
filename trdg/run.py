@@ -190,6 +190,13 @@ def parse_arguments():
         default=0,
     )
     parser.add_argument(
+        "-ci",
+        "--current_idx",
+        type=int,
+        help="Define current index of files to continue producing",
+        default=0,
+    )
+    parser.add_argument(
         "-om",
         "--output_mask",
         type=int,
@@ -454,6 +461,7 @@ def main():
                 [args.distorsion_orientation] * string_count,
                 [args.handwritten] * string_count,
                 [args.name_format] * string_count,
+                [args.current_idx] * string_count,
                 [args.width] * string_count,
                 [args.alignment] * string_count,
                 [args.text_color] * string_count,
@@ -479,10 +487,10 @@ def main():
     if args.name_format == 2:
         # Create file with filename-to-label connections
         with open(
-            os.path.join(args.output_dir, "labels.txt"), "w", encoding="utf8"
+            os.path.join(args.output_dir, "labels.txt"), "a+", encoding="utf8"
         ) as f:
             for i in range(string_count):
-                file_name = str(i) + "." + args.extension
+                file_name = str(args.current_idx + i) + "." + args.extension
                 label = strings[i]
                 if args.space_width == 0:
                     label = label.replace(" ", "")
