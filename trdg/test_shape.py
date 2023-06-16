@@ -1,5 +1,5 @@
 import cv2
 
-path = "./out/áo trấn thủ áo vệ sinh áp_47.jpg"
+path = "./out/dataset/182.jpg"
 im = cv2.imread(path)
 print(im.shape)
