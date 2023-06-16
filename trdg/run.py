@@ -312,7 +312,7 @@ def parse_arguments():
         "--case",
         type=str,
         nargs="?",
-        help="Generate upper or lowercase only. arguments: upper or lower. Example: --case upper",
+        help="arguments: upper, lower, capwords . Example: --case upper",
     )
     parser.add_argument(
         "-dt", "--dict", type=str, nargs="?", help="Define the dictionary to be used"
@@ -438,6 +438,8 @@ def main():
         strings = [x.upper() for x in strings]
     if args.case == "lower":
         strings = [x.lower() for x in strings]
+    if args.case == "capwords":
+        strings = [x.capitalize() for x in strings]
 
     string_count = len(strings)
 
@@ -486,15 +488,17 @@ def main():
 
     if args.name_format == 2:
         # Create file with filename-to-label connections
-        with open(
-            os.path.join(args.output_dir, "labels.txt"), "a+", encoding="utf8"
-        ) as f:
-            for i in range(string_count):
-                file_name = str(args.current_idx + i) + "." + args.extension
+        for i in range(string_count):
+            file_name = str(args.current_idx + i) + "." + 'txt'
+            with open(
+                os.path.join(args.output_dir, file_name), "a+", encoding="utf8"
+            ) as f:
+                # for i in range(string_count):
+                    # file_name = str(args.current_idx + i) + "." + args.extension
                 label = strings[i]
                 if args.space_width == 0:
                     label = label.replace(" ", "")
-                f.write("{} {}\n".format(file_name, label))
+                f.write("{}".format(label))
 
 
 if __name__ == "__main__":
