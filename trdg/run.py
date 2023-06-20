@@ -493,8 +493,6 @@ def main():
             with open(
                 os.path.join(args.output_dir, file_name), "a+", encoding="utf8"
             ) as f:
-                # for i in range(string_count):
-                    # file_name = str(args.current_idx + i) + "." + args.extension
                 label = strings[i]
                 if args.space_width == 0:
                     label = label.replace(" ", "")
