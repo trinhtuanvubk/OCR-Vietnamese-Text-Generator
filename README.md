@@ -12,9 +12,14 @@ pip install -r requirements.txt
 
 ### Data Generation
 
-- To generate text data:
 ```bash
 cd trdg/
+```
+
+- To generate text files from dict files:
+
+```
+python3 gen_corpus.py
 ```
 
 ```
