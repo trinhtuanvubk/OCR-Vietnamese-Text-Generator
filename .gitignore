@@ -7,6 +7,8 @@ __pycache__/
 *.so
 
 # --------------------------
+.circleci
+.github
 /trdg/out/*/
 /trdg/texts/
 /vutt/
