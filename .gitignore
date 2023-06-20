@@ -14,8 +14,8 @@ __pycache__/
 setup.*
 Dockerfile*
 MANIFEST*
-LICENCE
-codecove*
+LICENSE
+codecov*
 # --------------------------
 
 # Distribution / packaging
