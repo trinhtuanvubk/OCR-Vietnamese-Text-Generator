@@ -51,7 +51,7 @@ bash run.sh
     - `--output_dir`: Output directory
     - `--font_dir`: Select the fonts coresponding to the `--language`
     - `--input_file`: Select text file as source for the text
-    - `--background`: Define what kind of background to use. 0: Gaussian Noise, 1: Plain white, 2: Quasicrystal, 3: Image
+    - `--background`: Select background - 0: Gaussian Noise, 1: Plain white, 2: Quasicrystal, 3: Image
     - `--image_dir`: Define an image directory to use when `--background` is set to 3
     - `--margin`: Define the margins around the text when rendered. In pixels
     - `--blur`: Apply gaussian blur to the resulting sample. Should be an integer defining the blur radius
