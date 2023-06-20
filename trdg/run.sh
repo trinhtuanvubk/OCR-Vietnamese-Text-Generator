@@ -1,12 +1,12 @@
 python3 run.py \
---count 40000 \
+--count 50000 \
 --language vi \
 --format 26 \
 --name_format 2 \
 --current_idx 0 \
---output_dir ./out/dataset/ \
+--output_dir ./out/dataset_val/ \
 --font_dir ./fonts/vi \
---input_file ./texts/vutt_corpus.txt \
+--input_file ./texts/vutt_corpus3.txt \
 --background 3 \
 --image_dir ./images/light/ \
 --margins "0,0,0,0" \

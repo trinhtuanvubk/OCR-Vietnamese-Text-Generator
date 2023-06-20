@@ -6,8 +6,18 @@ __pycache__/
 # C extensions
 *.so
 
-/trdg/out/
+# --------------------------
+/trdg/out/*/
+/trdg/texts/
 /vutt/
+**/*.jpg
+setup.*
+Dockerfile*
+MANIFEST*
+LICENCE
+codecove*
+# --------------------------
+
 # Distribution / packaging
 .Python
 env/

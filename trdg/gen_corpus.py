@@ -70,12 +70,12 @@ def random_sentence_from_special_char(out_file_path, special_file_path, num_spec
 
 if __name__=="__main__":
     in_file_path = "./texts/underthesea_viet22k_vi_dict.txt"
-    out_file_path = "./texts/vutt_corpus.txt"
+    out_file_path = "./texts/vutt_corpus5.txt"
     special_file_path = "./texts/special_chars.txt"
-    sentence_from_words(in_file_path, out_file_path)
+    # sentence_from_words(in_file_path, out_file_path)
     # random_sentence_from_words(in_file_path, out_file_path, num_sentences=60000)    
     # random_sentence_from_special_char(out_file_path, special_file_path, num_sentences=10000)
-    random_sentence_from_words_with_special_char(in_file_path, out_file_path, special_file_path, num_words=1, num_special=3, num_sentences=30000)
-    random_sentence_from_words_with_special_char(in_file_path, out_file_path, special_file_path, num_words=2, num_special=0, num_sentences=10000)
-    random_sentence_from_words_with_special_char(in_file_path, out_file_path, special_file_path, num_words=2, num_special=1, num_sentences=25000) 
+    # random_sentence_from_words_with_special_char(in_file_path, out_file_path, special_file_path, num_words=1, num_special=3, num_sentences=30000)
+    # random_sentence_from_words_with_special_char(in_file_path, out_file_path, special_file_path, num_words=2, num_special=0, num_sentences=10000)
+    random_sentence_from_words_with_special_char(in_file_path, out_file_path, special_file_path, num_words=2, num_special=1, num_sentences=50000) 
     
