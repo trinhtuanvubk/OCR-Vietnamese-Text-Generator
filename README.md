@@ -65,6 +65,6 @@ bash run.sh
 ### Contributions
 
 - Add vietnamese fonts, dicts and corpus.
-- Add new function `trdg/gen_corpus.py` to generate text files from dict files  
-- Update features `--case` with `capwords`
-- Update save each text labels corresponding to each images if `--name_format` is set to 2
+- Add new function `trdg/gen_corpus.py` to generate text files from dict files.
+- Update features `--case` with `capwords`.
+- Update save each text labels corresponding to each images if `--name_format` is set to 2.
