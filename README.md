@@ -7,6 +7,7 @@ A synthetic data generator for text recognition
 
 - To create enviroment: 
 ```bash
+conda create --name textgen python=3.8
 pip install -r requirements.txt
 ```
 
