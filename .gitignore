@@ -1,5 +1,6 @@
 /trdg/images/*
 /trdg/out/*
+/trdg/check.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
