@@ -1,4 +1,4 @@
-# TextRecognitionDataGeneratorVietnamese
+# OCR-Vietnamese-Text-Generator
 
 A synthetic data generator for text recognition
 
