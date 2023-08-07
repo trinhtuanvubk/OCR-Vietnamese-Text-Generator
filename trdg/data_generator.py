@@ -189,7 +189,7 @@ class FakeTextDataGenerator(object):
             resized_img_px_mean = sum(resized_img_st.mean[:2]) / 3
             background_img_px_mean = sum(background_img_st.mean) / 3
 
-            if abs(resized_img_px_mean - background_img_px_mean) < 15:
+            if abs(resized_img_px_mean - background_img_px_mean) < 5:
                 print("value of mean pixel is too similar. Ignore this image")
 
                 print("resized_img_st \n {}".format(resized_img_st.mean))
