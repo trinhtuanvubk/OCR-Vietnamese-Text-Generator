@@ -1,7 +1,7 @@
 import shutil
 import os
 
-def move_10_percent(img_src, label_src, img_des, label_des):
+def split_data(img_src, label_src, img_des, label_des, ratio=0.9):
   """Moves 10% of the files in a folder to 5 other folders.
 
   Args:
@@ -17,7 +17,7 @@ def move_10_percent(img_src, label_src, img_des, label_des):
   label_files = os.listdir(label_src)
   number_of_files = len(img_files)
   print(number_of_files)
-  number_of_files_to_move = int(0.1 * number_of_files)
+  number_of_files_to_move = int((1.0-ratio) * number_of_files)
   print(number_of_files_to_move)
   moved_files = 0
 
@@ -112,7 +112,7 @@ if __name__ == "__main__":
       label_des = os.path.join(DES, f'labels46')
       os.makedirs(label_des, exist_ok=True)
 
-      number_of_files_moved += move_10_percent(img_src, label_src, img_des, label_des)
+      number_of_files_moved += split_data(img_src, label_src, img_des, label_des)
       # number_of_files_moved += remove_long_text(img_src, label_src, img_des, label_des)
 
   print(f"Moved {number_of_files_moved} files.")

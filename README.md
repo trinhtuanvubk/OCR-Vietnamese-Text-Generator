@@ -29,7 +29,8 @@ python3 run.py \
 --format 26 \
 --name_format 2 \
 --current_idx 0 \
---output_dir ./out/dataset/ \
+--output_dir ./train/images/ \
+--label_dir ./train/labels/ \
 --font_dir ./fonts/vi \
 --input_file ./texts/corpus.txt \
 --background 3 \
@@ -40,6 +41,7 @@ python3 run.py \
 --skew_angle 1 \
 --random_skew \
 --case upper \
+--thread_count 8 \
 ```
 
 or 
@@ -54,6 +56,7 @@ bash run.sh
     - `--name_format`: Select name format - 0: [TEXT]_[ID].[EXT], 1: [ID]_[TEXT].[EXT] 2: [ID].[EXT] + one file labels.txt containing id-to-label mappings
     - `--current_idx`: Define the begin index of `--name_format` for saving `ID`.
     - `--output_dir`: Output directory
+    - `--label_dir`: Label directory in case `name_format` set `2`
     - `--font_dir`: Select the fonts coresponding to the `--language`
     - `--input_file`: Select text file as source for the text
     - `--background`: Select background - 0: Gaussian Noise, 1: Plain white, 2: Quasicrystal, 3: Image
@@ -64,16 +67,22 @@ bash run.sh
     - `--skew_angle`: Define skewing angle of the generated text. In positive degrees
     - `--random_skew`: the skew angle will be randomized between the value set with `--skew_angle` and it's opposite
     - `--case`: Select (`upper`, `lower`, `capwords`)
+    - `--thread_count`: number of thread
 
 - Read more arguments on `trdg/run.py`
 
 
-### 
+### Splitting Data
 
+```
+python3 split_data.py
+```
 
 ### Contributions
 
 - Add vietnamese fonts, dicts and corpus.
 - Add new function `trdg/gen_corpus.py` to generate text files from dict files.
-- Update features `--case` with `capwords`.
+- Update feature `--case` with `capwords`.
 - Update save each text labels corresponding to each images if `--name_format` is set to 2.
+- Add split function `trdg/split_data.py` to split images and labels to train and val.
+- Add a new feature `--current_idx` to help generate data continuously.
