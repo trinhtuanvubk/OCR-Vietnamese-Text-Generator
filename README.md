@@ -67,6 +67,10 @@ bash run.sh
 
 - Read more arguments on `trdg/run.py`
 
+
+### 
+
+
 ### Contributions
 
 - Add vietnamese fonts, dicts and corpus.
