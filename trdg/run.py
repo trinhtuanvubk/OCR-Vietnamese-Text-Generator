@@ -439,7 +439,15 @@ def main():
     if args.case == "lower":
         strings = [x.lower() for x in strings]
     if args.case == "capwords":
-        strings = [x.capitalize() for x in strings]
+        # strings = [x.capitalize() for x in strings]
+        new_strings = []
+        for x in strings:
+            words = x.split(" ")
+            words = [i.capitalize() for i in words]
+            new_x = " ".join(words)
+            new_strings.append(new_x)
+        strings = new_strings
+
 
     string_count = len(strings)
 
@@ -488,15 +496,19 @@ def main():
 
     if args.name_format == 2:
         # Create file with filename-to-label connections
+        # count = 0
         for i in range(string_count):
             file_name = str(args.current_idx + i) + "." + 'txt'
-            with open(
-                os.path.join(args.output_dir, file_name), "a+", encoding="utf8"
-            ) as f:
-                label = strings[i]
-                if args.space_width == 0:
-                    label = label.replace(" ", "")
-                f.write("{}".format(label))
+            if os.path.exists(os.path.join(args.output_dir, str(args.current_idx + i) + "." + 'jpg')):
+                with open(
+                    os.path.join(args.output_dir, file_name), "w", encoding="utf8"
+                ) as f:
+                    label = strings[i]
+                    if args.space_width == 0:
+                        label = label.replace(" ", "")
+                    f.write("{}".format(label))
+            else:
+                print(f"filename is not exist {file_name}")
 
 
 if __name__ == "__main__":
