@@ -41,6 +41,9 @@ def parse_arguments():
         "--output_dir", type=str, nargs="?", help="The output directory", default="out/"
     )
     parser.add_argument(
+        "--label_dir", type=str, 
+    )
+    parser.add_argument(
         "-i",
         "--input_file",
         type=str,
@@ -499,9 +502,10 @@ def main():
         # count = 0
         for i in range(string_count):
             file_name = str(args.current_idx + i) + "." + 'txt'
+            os.makedirs(args.label_dir, exist_ok=True)
             if os.path.exists(os.path.join(args.output_dir, str(args.current_idx + i) + "." + 'jpg')):
                 with open(
-                    os.path.join(args.output_dir, file_name), "w", encoding="utf8"
+                    os.path.join(args.label_dir, file_name), "w", encoding="utf8"
                 ) as f:
                     label = strings[i]
                     if args.space_width == 0:

@@ -1,10 +1,11 @@
 python3 run.py \
---count 10000 \
+--count 10 \
 --language vi \
 --format 26 \
 --name_format 2 \
 --current_idx 0 \
---output_dir ./out/dataset/ \
+--output_dir ./out/images/ \
+--label_dir ./out/labels/ \
 --font_dir ./fonts/vi \
 --input_file ./texts/special_domain/fix5char.txt \
 --background 3 \
